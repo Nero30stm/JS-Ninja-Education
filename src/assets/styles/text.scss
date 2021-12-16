@@ -1,0 +1,38 @@
+.h1 {
+  font-size: 34px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 38px;
+  letter-spacing: -0.3700000047683716px;
+  text-align: left;
+}
+
+.pill-name {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.not-main-text {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: $ft-text-gray;
+}
+
+
+.day-header {
+  font-family: Roboto;
+  color: $ft-text-active;
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 38px;
+  letter-spacing: -0.3px;
+  text-align: left;
+  margin: 0;
+}

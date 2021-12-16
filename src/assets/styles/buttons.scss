@@ -1,0 +1,121 @@
+@import "base";
+@import "variables/colors";
+
+button {
+  background-color: transparent;
+}
+
+.button {
+  cursor: pointer;
+  min-height: 20px;
+}
+
+.mobile-fixed-button-container {
+
+
+  @include media-breakpoint-only(sm) {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 44px;
+  }
+
+  @include media-breakpoint-between(md, xl) {
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.first-btn{
+  height: 54px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 17px 0 17px 0;
+  background-color: $bg-button-first;
+  color: #F2F6F7;
+  font-size: 16px;
+  font-weight: bold;
+
+  .disabled-state {
+    display: none;
+  }
+
+  &:disabled {
+    background-color: $bg-disabled-button;
+    color: $ft-text-not-active;
+
+    .active-state {
+      display: none;
+    }
+
+    .disabled-state {
+      display: initial;
+    }
+  }
+
+  &.add-pill {
+    height: 48px;
+    width: 48px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 32px;
+    right: 16px;
+    background-image: url("../images/plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &.add-dose {
+    height: 48px;
+    width: 48px;
+    border-radius: 100%;
+    background-image: url("../images/plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.arrow-down-button {
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  margin-left: 12px;
+  background-image: url("../images/arrow-down.svg");
+  border: none;
+}
+
+.arrow-up-button {
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  margin-left: 12px;
+  background-image: url("../images/arrow-down.svg");
+  transform: rotate(180deg);
+  border: none;
+}
+
+.tablet-button-container{
+  display: flex;
+
+  @include media-breakpoint-between(lg, xl) {
+    width: 340px;
+  }
+}
+
+.tablet-check-button {
+  height: 100px;
+  min-width: 72px;
+  display: none;
+  margin-right: 12px;
+  background-image: url("../images/check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include media-breakpoint-between(lg, xl) {
+    margin-right: 4px;
+  }
+
+  &.active-state {
+    display: flex;
+  }
+}

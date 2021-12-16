@@ -1,0 +1,42 @@
+@import "breackpoints";
+.content-container {
+
+  position: relative;
+  box-sizing: border-box;
+
+  @include media-breakpoint-only(sm) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 100%;
+  }
+
+  @include media-breakpoint-only(xl) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+    max-width: 1920px;
+  }
+
+  @include media-breakpoint-only(lg) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+    max-width: 1080px;
+  }
+}
+.content-container-only-mobile {
+  position: relative;
+  box-sizing: border-box;
+
+  @include media-breakpoint-only(sm) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,424 @@
+@import "breackpoints";
+@import "base";
+@import "variables/colors";
+@import "buttons";
+@import "text";
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto;
+}
+
+.no-list {
+  list-style: none;
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+body {
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.App {
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+
+  @include media-breakpoint-only(sm) {
+    padding-top: 56px;
+  }
+
+  @include media-breakpoint-only(md) {
+    padding-top: 40px;
+  }
+}
+
+.adding-page {
+  @include media-breakpoint-only(sm) {
+    padding: 20px;
+  }
+}
+
+.adding-form {
+
+  @include media-breakpoint-between(md, xl){
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #1892FA;
+    border-radius: 30px;
+  }
+
+  &>* {
+    margin-bottom: 20px;
+  }
+}
+
+.create-pill, .second-step {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.second-step {
+
+}
+
+.time-input-container {
+  display: flex;
+  justify-content: space-between;
+
+  &>* {
+    font-size: 20px;
+    font-weight: bold;
+    color: $ft-text-active;
+  }
+
+  @include media-breakpoint-between(md, xl) {
+    width: 200px;
+  }
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.drop-down-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: absolute;
+  background-color: $bg-main;
+  border: #cdcdcd 1px solid;
+  border-radius: 5px;
+  top: 100%;
+  padding: 10px;
+  width: 120px;
+}
+
+.bordered-element {
+  border-radius: 24px;
+  border: 1px solid $br-main;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.tablet-container {
+  display: flex;
+  flex-grow: 2;
+  padding: 24px;
+  justify-content: space-between;
+
+  @include media-breakpoint-only(sm) {
+    min-width: 80%;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    flex-shrink: 0;
+    width: 340px;
+  }
+
+  &.resolved {
+    border-color: $br-resolved;
+  }
+}
+
+.timeline {
+
+  @include media-breakpoint-between(lg, xl){
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 46px;
+    overflow-x: auto;
+
+    // свойство gap для flex-box не работает в safari ((
+    &>:not(:last-child) {
+      margin-right: 28px;
+      margin-bottom: 36px;
+    }
+  }
+
+  @include media-breakpoint-only(sm) {
+    // свойство gap для flex-box не работает в safari ((
+    &>* {
+      margin-bottom: 28px;
+    }
+
+    &>:first-child {
+      margin-top: 30px;
+    }
+  }
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+
+  .pills-container {
+    display: flex;
+
+    @include media-breakpoint-only(sm) {
+      flex-direction: column;
+
+      &>:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      flex-direction: row;
+
+      &>:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.wide-radio-container {
+  display: flex;
+  flex-wrap: nowrap;
+
+  @include media-breakpoint-between(md,xl) {
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  * {
+    flex-shrink: 0;
+  }
+
+  .radio-list-item {
+
+    .chip {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    &:first-of-type{
+
+      .chip {
+        padding-left: 20px;
+        padding-right: 12px;
+
+        @include media-breakpoint-between(md,xl) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &:last-of-type{
+
+      .chip {
+        padding-left: 12px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .radio-item {
+    flex-shrink: 0;
+
+    .chip {
+      color: $ft-text-not-active;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      border-radius: 100px;
+    }
+
+    input:checked {
+      &~.chip {
+        padding-left: 20px;
+        padding-right: 20px;
+        color: $ft-text-active;
+        background-color: $bg-chip-type-button;
+      }
+    }
+  }
+}
+
+.horizontal-scroll-container {
+  overflow-x: scroll;
+}
+
+.chip {
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.not-active-text-item {
+  color: $ft-text-not-active;
+}
+
+.pill-type-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.inputs-container {
+
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 40px;
+  }
+
+  &>:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+.input {
+  height: 24px;
+  font-family: Roboto bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  &::placeholder {
+    color: $ft-text-not-active;
+    font-family: Roboto bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.arrow-left {
+  width: 12px;
+  height: 20px;
+  background-repeat: no-repeat;
+  position: center;
+  background-image: url("../images/arrow-left.svg");
+}
+.close {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  position: center;
+  background-image: url("../images/close.svg");
+}
+
+.pill-type-item {
+  position: relative;
+  width: 64px;
+  height: 64px;
+
+  .pill-item {
+    display: flex;
+    height: 64px;
+    width: 64px;
+    border-radius: 100%;
+    border: none;
+    background-color: $bg-chip-type-button;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  .pill-1 {
+    background-image: url("../images/pill-1-mini.png");
+  }
+  .pill-2 {
+    background-image: url("../images/pill-2-mini.png");
+  }
+  .pill-3 {
+    background-image: url("../images/pill-3-mini.png");
+  }
+  .pill-4 {
+    background-image: url("../images/pill-4-mini.png");
+  }
+
+  .pill-check {
+    display: none;
+    width: 18px;
+    height: 18px;
+    background-image: url("../images/pill-check.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  input:checked {
+    background-color: #44ff00;
+
+    &~.pill-check {
+      display: flex;
+    }
+  }
+}
+
+.pill-img {
+  height: 52px;
+  width: 52px;
+  display: flex;
+  background-size: cover;
+
+  &.pill-1 {
+    background-image: url("../images/pill-1.png");
+  }
+
+  &.pill-2 {
+    background-image: url("../images/pill-2.png");
+  }
+}
+
+.pill-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.main-container {
+  padding: 20px;
+}
+
+
